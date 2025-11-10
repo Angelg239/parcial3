@@ -38,7 +38,6 @@ class Validar:
             return True
         else:
             return False
-
     def ValidarEntrada(self, dato):
         """Verifica que la cadena tenga máximo 2 dígitos."""
 
