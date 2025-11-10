@@ -1,19 +1,8 @@
-# ==============================
-#   PROGRAMA: PILAS Y COLAS CON ORDENAMIENTO
-#   Autor: (Tu nombre si deseas)
-#   Descripción: Programa con interfaz gráfica (Tkinter)
-#   que permite ingresar números, validarlos, eliminarlos
-#   (como pila o cola) y ordenarlos con métodos burbuja o selección.
-# ==============================
-
 from tkinter import *            # Tkinter: para crear la interfaz gráfica
 from tkinter import messagebox   # messagebox: para mostrar mensajes emergentes
 from validar2p3 import validar2     # Importa la clase Validar desde el archivo validar2.py
 import numpy as np               # Librería para operaciones numéricas (no se usa mucho aquí, pero puede servir)
 
-# ==============================
-#   CLASE PRINCIPAL DE LA APLICACIÓN
-# ==============================
 class Principal:
     def __init__(self):
         self.val = validar2 ()           # Instancia de la clase Validar (control de entrada de datos)
@@ -37,9 +26,6 @@ class Principal:
         self.lis = []            # Lista auxiliar
         self.lista_datos = []    # Lista lógica (Python), contiene los datos ingresados
 
-    # ==============================
-    #   FUNCIÓN PARA VALIDAR Y AGREGAR DATOS
-    # ==============================
     def ValidarCaja(self):
         valor = self.dato.get().strip()   # Obtiene el texto ingresado y elimina espacios
 
@@ -59,9 +45,6 @@ class Principal:
             messagebox.showerror("Error", "No es un número válido")
             self.dato.delete(0, END)
 
-    # ==============================
-    #   FUNCIÓN PARA ELIMINAR DATOS (PILA O COLA)
-    # ==============================
     def eliminarDato(self):
         # Si la lista está vacía
         if self.lista.size() <= 0:
@@ -80,9 +63,6 @@ class Principal:
         # Actualiza el texto del contador
         self.label.config(text=f'Numeros en la lista: {len(self.lista_datos)}')
 
-    # ==============================
-    #   ORDENAMIENTO BURBUJA
-    # ==============================
     def ordenar_burbuja(self):
         # Obtiene todos los elementos actuales del Listbox
         self.lis = list(self.lista.get(0, END))
@@ -112,9 +92,6 @@ class Principal:
             for i in self.lis:
                 self.lista.insert(self.lista.size() + 1, str(i))
 
-    # ==============================
-    #   ORDENAMIENTO POR SELECCIÓN
-    # ==============================
     def ordenar_seleccion(self):
         self.lis = list(self.lista.get(0, END))
 
@@ -143,9 +120,6 @@ class Principal:
             for i in self.lis:
                 self.lista.insert(self.lista.size() + 1, str(i))
 
-    # ==============================
-    #   INTERFAZ GRÁFICA
-    # ==============================
     def Inicio(self):
         # Etiqueta y caja de texto
         Label(self.ven, text="Ingrese un número:").place(x=20, y=10)
@@ -176,9 +150,6 @@ class Principal:
         # Inicia el bucle principal
         self.ven.mainloop()
 
-# ==============================
-#   PUNTO DE ENTRADA
-# ==============================
 if __name__ == '__main__':
     app = Principal()
     app.Inicio()

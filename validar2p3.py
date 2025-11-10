@@ -1,17 +1,8 @@
-# ==============================
-#   ARCHIVO: validar2.py
-#   Clase con funciones de validación de entradas
-#   Se usa en el programa principal "Pilas y Colas"
-# ==============================
 
 class Validar:
     def __init__(self):
         self.con = 0  # Contador usado en la validación recursiva de números
 
-    # -------------------------------------------------
-    # MÉTODO: ValidarNumeros
-    # Verifica que una cadena esté compuesta solo por caracteres numéricos (0–9)
-    # -------------------------------------------------
     def ValidarNumeros(self, num):
         """Verifica que la cadena contenga solo números (recursivo)."""
 
@@ -35,10 +26,6 @@ class Validar:
             self.con = 0
             return False
 
-    # -------------------------------------------------
-    # MÉTODO: ValidarLetra
-    # Verifica que el primer carácter de una cadena sea una letra mayúscula (A–Z)
-    # -------------------------------------------------
     def ValidarLetra(self, dato):
         """Verifica que el primer carácter sea una letra mayúscula."""
         
@@ -52,10 +39,6 @@ class Validar:
         else:
             return False
 
-    # -------------------------------------------------
-    # MÉTODO: ValidarEntrada
-    # Verifica que el dato tenga máximo 2 dígitos
-    # -------------------------------------------------
     def ValidarEntrada(self, dato):
         """Verifica que la cadena tenga máximo 2 dígitos."""
 
